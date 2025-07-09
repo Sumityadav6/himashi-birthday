@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Himashi - Sumit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            animation: fadeInDown 1s ease;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #ff4081;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #5e35b1;
+            margin-bottom: 20px;
+        }
+        
+        .main-content {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .highlight {
+            color: #ff4081;
+            font-weight: bold;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #5e35b1;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #ff4081, #5e35b1);
+            border-radius: 2px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 250px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+        
+        .thank-you-section {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        
+        .thank-you-btn {
+            background: linear-gradient(to right, #ff4081, #5e35b1);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+        
+        .thank-you-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .thank-you-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .message-display {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #ff4081;
+            font-weight: bold;
+            min-height: 30px;
+        }
+        
+        .apology-section {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .apology-title {
+            font-size: 2rem;
+            color: #5e35b1;
+            margin-bottom: 20px;
+        }
+        
+        .apology-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .special-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+            justify-content: center;
+        }
+        
+        .special-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .special-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .special-card i {
+            font-size: 3rem;
+            color: #ff4081;
+            margin-bottom: 15px;
+        }
+        
+        .special-card h3 {
+            color: #5e35b1;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #5e35b1;
+            font-weight: 500;
+        }
+        
+        .signature {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #ff4081;
+            font-weight: bold;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        .heart {
+            color: #ff4081;
+            animation: heartbeat 1.2s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .special-note {
+            background: linear-gradient(to right, #ff4081, #5e35b1);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Happy Birthday <span class="heart">❤</span> Himashi</h1>
+            <div class="subtitle">Sumit ki taraf se khaas peshkash</div>
+        </header>
+        
+        <div class="main-content">
+            <div class="message">
+                <p>Pyaari <span class="highlight">Himashi</span>,</p>
+                <p>Sab se pehle, main tujhe birthday par wish nahi karne ke liye bahut sorry. I know ki maine galti kar di, aur main sach mein bahut pachtau hoon.</p>
+                <p>Tu mere liye duniya ki sabse important hai, aur isiliye maine tujhe khush karne ke liye ye special website banayi hai. Tere saath bita har pal mere liye bahut precious hai.</p>
+                <p>Tere special din par, main tujhe dher saari khushiyan, success aur pyaar wish karta hoon. Tu sabse best deserve karti hai!</p>
+                <p>Pyaar se,</p>
+                <p class="highlight">Tumhara Sumit</p>
+            </div>
+        </div>
+        
+        <div class="apology-section">
+            <h2 class="apology-title">Meri Maafi</h2>
+            <div class="apology-content">
+                <p>Himashi, main jaanta hu ki birthday wale din wish nahi kiya. Woh din mujhe yaad rahega aur main hamesha is baat ka afsos karta rahunga.</p>
+                <p>Tujhse pyaar karne wala har insaan ko pata hai ki birthday kitna important hota hai. Main apni galti maanta hu aur vaada karta hu ki aage se kabhi nahi bhoolunga.</p>
+                <p>Bas ek baar mujhe maaf kar de, aur ye website meri taraf se chhota sa tohfa hai tujhpar.</p>
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="section-title">Humari Khaas Yaadein</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images\image1.jpg.png" alt="Special Moment">
+                    <div class="caption">Humari Pehli Mulaakat</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\image3.jpg.png" alt="Happy Times">
+                    <div class="caption">Teri Haseen Muskurahat</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\image2.jpg.png" alt="Together">
+                    <div class="caption">Sath Haste Hue Pal</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="special-section">
+            <div class="special-card">
+                <i class="fas fa-heart floating"></i>
+                <h3>Tera Pyaar</h3>
+                <p>Tera pyaar mere liye sabse khaas hai. Har din tujhse pyaar karke naya lagta hai.</p>
+            </div>
+            
+            <div class="special-card">
+                <i class="fas fa-star floating"></i>
+                <h3>Teri Khaasiyat</h3>
+                <p>Teri har ada, har baat, har khaasiyat mujhe itni pasand hai. Tu meri life ki sabse khoobsurat cheez hai.</p>
+            </div>
+            
+            <div class="special-card">
+                <i class="fas fa-gift floating"></i>
+                <h3>Future Plans</h3>
+                <p>Main chahta hu ki hum saath mein apne sab sapne poore karein. Tere bina koi plan adhura hai.</p>
+            </div>
+        </div>
+        
+        <div class="special-note">
+            <p>Himashi, tu meri life mein aayi sabse behtareen cheez hai. Main hamesha tujhe khush rakhne ki koshish karunga.</p>
+        </div>
+        
+        <div class="thank-you-section">
+            <h2 class="section-title">Mujhe Reply Bhejo</h2>
+            <p>Agar tumne meri maafiyan accept kar li hain toh neeche diye gaye button ko dabao!</p>
+            <button class="thank-you-btn" onclick="showThankYou()">Thank You Bolna ❤</button>
+            <div class="message-display" id="thankYouMessage"></div>
+        </div>
+        
+        <footer>
+            <p>Created with love by Sumit Yadav</p>
+            <p class="signature">Himashi Sharma ke liye - Meri jaan</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Thank you message functionality
+        function showThankYou() {
+            const messages = [
+                "Thank you, Sumit! ❤️",
+                "Mujhe maaf kar diya! 😊",
+                "Tumhari website bahut acchi hai! 💖",
+                "Main tumse bahut pyaar karti hoon! 🥰",
+                "Tumne mera dil jeet liya! 💕",
+                "Chalo ab tumhe maaf kiya! 😘"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('thankYouMessage').innerHTML = randomMessage;
+            
+            // Create floating hearts
+            createHearts();
+        }
+        
+        function createHearts() {
+            const heartCount = 30;
+            const container = document.querySelector('.thank-you-section');
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.style.position = 'absolute';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = '0';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heart.style.opacity = Math.random() * 0.5 + 0.5;
+                heart.style.animation = `heartFloat ${Math.random() * 3 + 2}s linear forwards`;
+                
+                // Add animation styles dynamically
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    @keyframes heartFloat {
+                        0% {
+                            transform: translateY(0) rotate(0deg);
+                            opacity: ${heart.style.opacity};
+                        }
+                        100% {
+                            transform: translateY(-100vh) rotate(${Math.random() * 360}deg);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                container.appendChild(heart);
+                
+                // Remove heart after animation
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+        }
+        
+        // Add floating effect to gallery on hover
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('floating');
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.classList.remove('floating');
+            });
+        });
+    </script>
+</body>
+</html>
